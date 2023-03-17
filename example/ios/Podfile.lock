@@ -89,9 +89,9 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
-  square_reader_sdk: 9f71e845136d9ebc33bf9e0dfc52f6cb1891655f
+  square_reader_sdk: b19d0e834af9c9ed3744fcd32e19bb7c5d90a26c
   SwiftProtobuf: 59d9ea2eb5f84b509f32d170a65f3348ae758f1e
 
 PODFILE CHECKSUM: 3ceefe9d94e435d066c1c3f69ed8e7d6a52397ff
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
