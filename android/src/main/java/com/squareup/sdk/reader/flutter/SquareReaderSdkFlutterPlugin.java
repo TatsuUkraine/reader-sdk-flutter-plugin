@@ -15,10 +15,15 @@ limitations under the License.
 */
 package com.squareup.sdk.reader.flutter;
 
+import static androidx.core.content.ContextCompat.getSystemService;
+
 import android.app.Activity;
+import android.app.UiModeManager;
 import android.content.Context;
+import android.os.Build;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
@@ -159,5 +164,12 @@ public class SquareReaderSdkFlutterPlugin implements MethodCallHandler, FlutterP
 
     ReaderSdk.initialize(currentActivity.getApplication());
     sdkInitialized = true;
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+      UiModeManager uiModeManager = (UiModeManager) currentActivity.getApplication().getSystemService(Context.UI_MODE_SERVICE);
+      uiModeManager.setApplicationNightMode(UiModeManager.MODE_NIGHT_CUSTOM);
+    } else {
+      AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+    }
   }
 }
