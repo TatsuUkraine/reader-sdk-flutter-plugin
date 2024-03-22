@@ -47,6 +47,10 @@ def DEFAULT_PLAY_SERVICES_BASE_VERSION = '16.0.1'
 def READER_SDK_VERSION = '[1.6.1, 2.0)'
 
 android {
+    if (project.android.hasProperty('namespace')) {
+        namespace 'com.squareup.readersdkflutterplugin'
+    }
+
     compileSdkVersion 32
 
     defaultConfig {
