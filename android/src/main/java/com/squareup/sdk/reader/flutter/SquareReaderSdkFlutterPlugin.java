@@ -33,7 +33,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 import java.util.HashMap;
 
 import com.squareup.sdk.reader.ReaderSdk;
@@ -47,13 +46,6 @@ public class SquareReaderSdkFlutterPlugin implements MethodCallHandler, FlutterP
   private StoreCustomerCardModule storeCustomerCardModule;
   private Activity currentActivity;
   private static boolean sdkInitialized = false;
-
-  public static void registerWith(Registrar registrar) {
-    SquareReaderSdkFlutterPlugin instance = new SquareReaderSdkFlutterPlugin(registrar.activity());
-    instance.onAttachedToEngine(registrar.activity(), registrar.messenger());
-    methodChannel.setMethodCallHandler(instance);
-
-  }
 
   private SquareReaderSdkFlutterPlugin(Context context) {
     init(context);
